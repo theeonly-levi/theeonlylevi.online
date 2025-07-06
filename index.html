@@ -1,70 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="urgzQkprKPwyuy3l4UTIfl2Vm5jVNgNoMfVIypetZl0" />
-  <title>TheeOnlyLevi</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Levi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind Dark Mode
+    tailwind.config = {
+      darkMode: 'class'
+    };
+
+    // Load dark mode preference
+    if (localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-100 transition-colors duration-500">
+
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-5 right-5">
+    <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-2 rounded-full shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 opacity-0 animate-fade-in">
+    <img src="https://via.placeholder.com/150" alt="Levi's Photo" class="rounded-full w-36 h-36 shadow-lg mb-6 transition-transform hover:scale-105 duration-300">
+    <h1 class="text-4xl md:text-5xl font-bold mb-2">Hi, I'm Levi</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-6">I'm a computer scientist passionate about gaming and programming. I create, solve, and build with Python and C++.</p>
+    <a href="#about" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 dark:hover:bg-blue-500 transition duration-300">Learn More</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-white dark:bg-gray-900 opacity-0 animate-fade-in delay-200">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="text-lg mb-6">I'm Levi, a computer scientist with a strong background in Python and C++ programming. I thrive on solving complex problems and enjoy creating meaningful tech experiences—especially in gaming.</p>
+      <p class="text-lg">When I'm not coding, you’ll find me gaming, exploring new tech, or learning something new. Let's connect and bring cool ideas to life!</p>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer class="bg-blue-600 dark:bg-blue-900 text-white py-8 text-center opacity-0 animate-fade-in delay-300">
+    <h3 class="text-2xl font-semibold mb-2">Let's Connect</h3>
+    <p class="mb-4">Email: <a href="mailto:you@example.com" class="underline">you@example.com</a></p>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="#" class="hover:text-blue-200">LinkedIn</a>
+      <a href="https://github.com/theeonly-levi" target="_blank" class="hover:text-blue-200">GitHub</a>
+      <a href="#" class="hover:text-blue-200">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- Fade-in Animation -->
   <style>
-  .profile-img {
-  display: block;
-  max-width: 150px;
-  border-radius: 50%;
-  margin: 0 auto 2rem;
-  }
-  
-    
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 3rem auto;
-      padding: 1rem;
-      line-height: 1.6;
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
     }
-    h1 {
-      color: #333;
-    }
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      margin-right: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .social-links a.instagram {
-      background-color: #e1306c;
-    }
-    .social-links a.instagram:hover {
-      background-color: #c72b63;
-    }
-    .social-links a.github:hover {
-      background-color: #555;
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
-</head>
-<body>
-  <img src="levi.jpg" alt="Profile picture of Levi" class="profile-img" />
-  <h1>Hello, I'm Levi 👋</h1>
-  <p>Welcome to my domain! I'm an aspiring villain passionate about computers.</p>
-  <p>This is my space on the internet — stay tuned!</p>
 
-  <div class="social-links">
-    <a href="https://www.instagram.com/theeonly_levi/" class="instagram" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://github.com/theeonly-levi" class="github" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </div>
+  <!-- Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+  </script>
+
 </body>
 </html>
