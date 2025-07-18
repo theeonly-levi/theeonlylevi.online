@@ -50,13 +50,32 @@
 </head>
 <body class="bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-100 transition-colors duration-500">
 
-  <!-- Particle Background -->
-  <div id="particles-js" class="absolute inset-0 z-0"></div>
+  <!-- Capricorn Constellation Background -->
+  <svg id="capricorn-constellation" class="absolute inset-0 z-0 pointer-events-none" width="100vw" height="100vh" viewBox="0 0 1000 600" style="width:100vw;height:100vh;">
+    <!-- Capricorn stars (approximate positions and connections) -->
+    <circle cx="200" cy="500" r="5" fill="#fff" />
+    <circle cx="300" cy="400" r="5" fill="#fff" />
+    <circle cx="400" cy="300" r="5" fill="#fff" />
+    <circle cx="500" cy="350" r="5" fill="#fff" />
+    <circle cx="600" cy="250" r="5" fill="#fff" />
+    <circle cx="700" cy="200" r="5" fill="#fff" />
+    <circle cx="800" cy="300" r="5" fill="#fff" />
+    <circle cx="750" cy="400" r="5" fill="#fff" />
+    <!-- Connections -->
+    <line x1="200" y1="500" x2="300" y2="400" stroke="#fff" stroke-width="2" />
+    <line x1="300" y1="400" x2="400" y2="300" stroke="#fff" stroke-width="2" />
+    <line x1="400" y1="300" x2="500" y2="350" stroke="#fff" stroke-width="2" />
+    <line x1="500" y1="350" x2="600" y2="250" stroke="#fff" stroke-width="2" />
+    <line x1="600" y1="250" x2="700" y2="200" stroke="#fff" stroke-width="2" />
+    <line x1="700" y1="200" x2="800" y2="300" stroke="#fff" stroke-width="2" />
+    <line x1="800" y1="300" x2="750" y2="400" stroke="#fff" stroke-width="2" />
+    <line x1="750" y1="400" x2="500" y2="350" stroke="#fff" stroke-width="2" />
+  </svg>
   
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-10">
     <div class="backdrop-blur-sm bg-white/30 dark:bg-gray-900/30 p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500">
-      <img src="https://via.placeholder.com/150" alt="Levi's Photo" 
+      <img src="https://via.placeholder.com/150" alt="Blank" 
            class="rounded-full w-36 h-36 shadow-lg mb-6 border-4 border-blue-500 dark:border-blue-400 hover:rotate-6 transition-all duration-300">
       <h1 class="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">Hi, I'm Levi</h1>
       <p class="text-lg md:text-xl max-w-xl mb-6">I'm a student passionate about gaming and programming. I create, solve, and build with Python and C++.</p>
@@ -126,51 +145,6 @@
     });
   </script>
 
-  <!-- Particles Configuration -->
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#4B5563' },
-        shape: { type: 'circle' },
-        opacity: {
-          value: 0.5,
-          random: false,
-          anim: { enable: false }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: { enable: false }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#4B5563',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          bounce: false
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' },
-          resize: true
-        }
-      },
-      retina_detect: true
-    });
-  </script>
 
 </body>
 </html>
